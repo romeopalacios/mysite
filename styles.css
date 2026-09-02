@@ -72,3 +72,123 @@ footer{background:var(--ink);color:var(--cream);border-top:1px solid #f4f5f01f}f
 .contact-lead{background:var(--forest)}
 @media(max-width:900px){.hero{grid-template-columns:1fr}.hero-shape{margin:0;min-height:380px}.hero-stamp{display:none}}
 @media(max-width:600px){.hero-shape{margin:0;min-height:320px}.hero h1{margin-top:45px}.section-pad{padding-top:82px;padding-bottom:82px}}
+
+/* Signature drawn wordmark + final polish */
+.site-header{position:fixed;top:0;background:linear-gradient(180deg,rgba(2,8,6,.88),rgba(2,8,6,.58));backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:height .35s ease,background .35s ease}
+.site-header.is-scrolled{height:66px;background:rgba(2,8,6,.92)}
+.brand-drawn{width:clamp(154px,15vw,220px);height:50px;display:block;color:var(--cream)}
+.wordmark{display:block;width:100%;height:100%;overflow:visible}
+.wordmark text{font-family:"DM Sans",sans-serif;fill:transparent;stroke:currentColor;stroke-width:.55px;paint-order:stroke fill;stroke-dasharray:420;stroke-dashoffset:420;animation:wordmark-draw 1.9s cubic-bezier(.65,0,.2,1) .12s forwards,wordmark-fill .7s ease 1.55s forwards}
+.wordmark-main{font-size:23px;font-weight:600;letter-spacing:3.7px}
+.wordmark-sub{font-size:8px;font-weight:500;letter-spacing:7.2px;stroke:var(--acid)!important}
+.wordmark-swish{fill:none;stroke:var(--acid);stroke-width:1.1;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:swish-draw .8s cubic-bezier(.65,0,.2,1) 1.45s forwards}
+@keyframes wordmark-draw{to{stroke-dashoffset:0}}
+@keyframes wordmark-fill{to{fill:currentColor;stroke-opacity:.18}}
+@keyframes swish-draw{to{stroke-dashoffset:0}}
+.hero{padding-top:78px}
+.hero-copy{position:relative}
+.hero-copy:before{content:"01 / 04";position:absolute;left:clamp(24px,4.5vw,76px);bottom:30px;color:#8ca095;font-size:9px;letter-spacing:.2em}
+.hero h1{background:linear-gradient(120deg,#fff 15%,#a8c0b0 55%,#fff 82%);background-size:200% auto;color:transparent;background-clip:text;-webkit-background-clip:text;animation:hero-sheen 7s linear infinite}
+@keyframes hero-sheen{to{background-position:-200% center}}
+.hero-shape:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(190,225,202,.16),transparent 32%);pointer-events:none}
+.footer-wordmark{font-size:13px;font-weight:700;letter-spacing:.06em}.footer-wordmark i{font-style:normal;color:var(--acid);font-weight:400}
+@media(max-width:600px){.brand-drawn{width:146px;height:44px}.site-header.is-scrolled{height:60px}.hero-copy:before{display:none}}
+@media(prefers-reduced-motion:reduce){.wordmark text{animation:none;fill:currentColor;stroke-dashoffset:0}.wordmark-sub{fill:var(--acid)}.wordmark-swish{animation:none;stroke-dashoffset:0}.hero h1{animation:none;background-position:0}}
+
+/* Lion Grid identity artwork */
+.brand-drawn{width:220px;height:58px;display:flex;align-items:center;gap:10px;overflow:visible}
+.photo-mark,.footer-mark{position:relative;display:block;flex:0 0 auto;width:47px;height:47px;border-radius:50%;overflow:hidden;clip-path:circle(0 at 50% 50%);animation:lion-reveal 1.05s cubic-bezier(.2,.75,.2,1) .08s forwards;filter:drop-shadow(0 0 0 rgba(0,174,239,0))}
+.photo-mark:after{content:"";position:absolute;inset:0;border:1px solid rgba(237,174,56,.75);border-radius:50%;box-shadow:inset 0 0 12px rgba(0,174,239,.18)}
+.photo-mark img,.footer-mark img{height:115%;width:auto;max-width:none;display:block;transform:translateY(-6.5%)}
+.drawn-name{display:flex;min-width:0;flex-direction:column;line-height:1;white-space:nowrap;clip-path:inset(0 100% 0 0);animation:name-wipe 1s cubic-bezier(.65,0,.2,1) .65s forwards}
+.drawn-name b{font-size:16px;letter-spacing:.12em}.drawn-name i{margin-top:6px;color:#e5aa3d;font-size:7px;font-style:normal;font-weight:600;letter-spacing:.58em}
+@keyframes lion-reveal{70%{clip-path:circle(55% at 50% 50%);filter:drop-shadow(0 0 14px rgba(0,174,239,.65))}100%{clip-path:circle(55% at 50% 50%);filter:drop-shadow(0 0 4px rgba(0,174,239,.25))}}
+@keyframes name-wipe{to{clip-path:inset(0 0 0 0)}}
+.hero-lion{position:absolute;z-index:1;left:50%;top:50%;width:clamp(530px,58vw,930px);max-width:none;transform:translate(-49%,-50%);opacity:.9;mix-blend-mode:screen;animation:lion-arrive 1.4s cubic-bezier(.2,.75,.2,1) .25s both}
+@keyframes lion-arrive{from{opacity:0;transform:translate(-46%,-48%) scale(.96);filter:blur(9px)}to{opacity:.9;transform:translate(-49%,-50%) scale(1);filter:blur(0)}}
+.hero-shape .shape-copy{z-index:2;text-shadow:0 2px 22px #020806;bottom:8%}
+.footer-wordmark{display:flex;align-items:center;gap:10px}.footer-mark{width:38px;height:38px;clip-path:circle(55% at 50% 50%);animation:none}.footer-wordmark>span:last-child{font-size:12px;letter-spacing:.06em}
+@media(max-width:900px){.hero-lion{width:clamp(580px,115vw,850px)}}
+@media(max-width:600px){.brand-drawn{width:174px;height:52px;gap:7px}.photo-mark{width:39px;height:39px}.drawn-name b{font-size:13px}.drawn-name i{font-size:6px;letter-spacing:.48em}.hero-lion{width:650px}.footer-wordmark>span:last-child{display:none}}
+@media(prefers-reduced-motion:reduce){.photo-mark{animation:none;clip-path:circle(55% at 50% 50%)}.drawn-name{animation:none;clip-path:none}.hero-lion{animation:none}}
+
+/* Smoother logo motion and more intentional artwork crop */
+.site-header{border-bottom-color:rgba(225,174,72,.14)}
+.brand-drawn{gap:11px}
+.photo-mark{clip-path:circle(0 at 50% 50%);animation:lion-reveal 1.35s cubic-bezier(.16,1,.3,1) .1s forwards;will-change:clip-path,filter;transition:transform .55s cubic-bezier(.16,1,.3,1),filter .55s ease}
+.brand-drawn:hover .photo-mark{transform:rotate(-3deg) scale(1.045);filter:drop-shadow(0 0 9px rgba(0,174,239,.38))}
+.drawn-name{clip-path:none;opacity:0;transform:translateX(-8px);animation:name-settle .9s cubic-bezier(.16,1,.3,1) .62s forwards}
+.drawn-name b{color:#f7f4eb;font-weight:600}.drawn-name i{color:#e8ad43}
+@keyframes lion-reveal{0%{clip-path:circle(0 at 50% 50%);filter:drop-shadow(0 0 0 rgba(0,174,239,0));transform:scale(.92)}65%{filter:drop-shadow(0 0 12px rgba(0,174,239,.42))}100%{clip-path:circle(55% at 50% 50%);filter:drop-shadow(0 0 3px rgba(0,174,239,.18));transform:scale(1)}}
+@keyframes name-settle{to{opacity:1;transform:translateX(0)}}
+.hero-shape{background:#07131b;isolation:isolate}
+.hero-shape .arch{z-index:0;background:radial-gradient(circle at 20% 0,rgba(0,174,239,.14),transparent 60%);opacity:1}
+.hero-lion{left:0;top:50%;width:clamp(830px,65vw,1120px);clip-path:inset(0 55% 0 0);transform:translate(-4%,-50%) scale(1);opacity:.88;mix-blend-mode:normal;animation:lion-arrive 2s cubic-bezier(.16,1,.3,1) .18s both;filter:saturate(.88) contrast(1.03);will-change:transform,opacity;transition:transform .8s cubic-bezier(.16,1,.3,1)}
+@keyframes lion-arrive{from{opacity:0;transform:translate(-8%,-50%) scale(.97);filter:blur(7px) saturate(.75)}to{opacity:.88;transform:translate(-4%,-50%) scale(1);filter:blur(0) saturate(.88) contrast(1.03)}}
+.hero-shape .shape-copy{left:12%;bottom:9%;padding:10px 12px;background:rgba(2,8,6,.38);border-left:1px solid rgba(232,173,67,.7);backdrop-filter:blur(6px);text-shadow:none;color:#f4f1e7}
+.hero-shape .shape-copy em{color:#e8ad43}
+.hero-shape:after{z-index:1;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(0,174,239,.12),transparent 29%);transition:opacity .5s ease}
+.header-cta{border-color:rgba(232,173,67,.55)}
+.header-cta:hover{background:#a97220;border-color:#e8ad43}
+.footer-mark{filter:drop-shadow(0 0 3px rgba(0,174,239,.2))}
+.footer-mark img{width:100%;max-width:100%;height:125%;object-fit:cover;object-position:left center;transform:translateY(-10%)}
+@media(max-width:900px){.hero-lion{width:clamp(820px,145vw,1100px);transform:translate(-3%,-50%)}.hero-shape .shape-copy{left:8%}}
+@media(max-width:600px){.brand-drawn{gap:8px}.hero-lion{width:790px;transform:translate(-5%,-50%)}.hero-shape .shape-copy{bottom:7%}}
+@media(prefers-reduced-motion:reduce){.photo-mark,.drawn-name,.hero-lion{animation:none}.photo-mark{transform:none}.drawn-name{opacity:1;transform:none}.hero-lion{opacity:.88;transform:translate(-4%,-50%)}}
+
+/* Lion artwork palette: midnight, gold, electric blue, ivory */
+:root{--orange:#d99a2b;--yellow:#08141d;--acid:#00aeea;--ink:#050c12;--cream:#f6f1e7;--pink:#102432;--forest:#0a1822}
+body{background:var(--cream)}
+.site-header{background:linear-gradient(180deg,rgba(5,12,18,.94),rgba(5,12,18,.72));border-bottom-color:rgba(232,173,67,.18)}
+.site-header.is-scrolled{background:rgba(5,12,18,.95)}
+.hero{background:var(--ink)}
+.hero h1{background-image:linear-gradient(120deg,#fff 15%,#d6b46e 54%,#fff 82%)}
+.hero-shape{background:#081722}
+.period,.drawn-name i,.footer-wordmark i{color:#e8ad43}
+.round-link{border-bottom-color:rgba(232,173,67,.65)}.round-link:hover{color:#00aeea}
+.intro{background:var(--cream);color:#101923}.intro .label{color:#a56d18}.intro-copy p{color:#53616a}
+.services{background:#07121a}.services .label{color:#e8ad43}.services h2 em{color:#00aeea}
+.service-list,.service-card{border-color:rgba(232,173,67,.2)}.service-card p{color:#aebbc3}.service-card:hover{background:#102b3a}.service-card:hover .card-arrow{color:#00aeea;border-color:#00aeea}
+.manifesto{background:#0d2230}.manifesto-big span{color:#e8ad43}
+.process{background:#050c12}.process .label{color:#e8ad43}.process h2 em{color:#00aeea}.process-steps,.step{border-color:rgba(232,173,67,.22)}.step p{color:#9daeb8}
+.contact-lead{background:#0d2230}.contact-lead .label{color:#e8ad43}.contact-lead h2 em{color:#00aeea}.contact-lead>a{border-color:#e8ad43}
+.project-form{background:#050c12}.project-form input:focus,.project-form select:focus,.project-form textarea:focus{border-color:#00aeea}.project-form button{background:#e8ad43}.project-form button:hover{background:#00aeea;color:#051018}
+footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
+
+/* Hand-sketched header logo reveal */
+.photo-mark{overflow:visible;clip-path:none;animation:none;filter:none}
+.photo-mark:after{display:none}
+.photo-mark>img{width:100%;max-width:100%;height:115%;object-fit:cover;object-position:left center;opacity:0;clip-path:inset(0 100% 0 0);filter:saturate(.25) contrast(1.18);animation:lion-ink-in 1.05s cubic-bezier(.16,1,.3,1) .72s forwards}
+.logo-sketch{position:absolute;inset:-1px;width:calc(100% + 2px);height:calc(100% + 2px);overflow:visible;pointer-events:none;filter:drop-shadow(0 0 3px rgba(232,173,67,.25));animation:sketch-away .42s ease 1.55s forwards}
+.logo-sketch path{fill:none;stroke:#e8ad43;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:150;stroke-dashoffset:150;animation:sketch-line 1.25s cubic-bezier(.55,.05,.22,1) .08s forwards}
+.logo-sketch path+path{stroke:#f4d28d;stroke-width:.55;stroke-dasharray:125;stroke-dashoffset:125;animation-delay:.22s}
+@keyframes sketch-line{to{stroke-dashoffset:0}}
+@keyframes lion-ink-in{0%{opacity:0;clip-path:inset(0 100% 0 0);filter:saturate(0) contrast(1.3)}55%{opacity:.72;filter:saturate(.4) contrast(1.15)}100%{opacity:1;clip-path:inset(0 0 0 0);filter:saturate(1) contrast(1)}}
+@keyframes sketch-away{to{opacity:.42}}
+.brand-drawn:hover .photo-mark{transform:rotate(-2deg) scale(1.035);filter:none}
+@media(prefers-reduced-motion:reduce){.photo-mark>img{opacity:1;clip-path:none;filter:none;animation:none}.logo-sketch{display:none}}
+
+/* Draw the header lettering, not just the emblem */
+.drawn-name{display:block;width:154px;height:42px;overflow:visible;opacity:1;transform:none;clip-path:none;animation:none}
+.drawn-name text{font-family:"DM Sans",sans-serif;fill:transparent;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill;stroke-dasharray:340;stroke-dashoffset:340;animation:name-outline 1.65s cubic-bezier(.55,.05,.22,1) .48s forwards,name-fill .5s ease 1.86s forwards}
+.drawn-name-main{font-size:17px;font-weight:700;letter-spacing:2.35px;stroke:#f7f4eb;stroke-width:.48px}
+.drawn-name-sub{font-size:7px;font-weight:600;letter-spacing:6.2px;stroke:#e8ad43;stroke-width:.42px;animation-delay:.72s,2.02s!important}
+.drawn-name path{fill:none;stroke:#e8ad43;stroke-width:.75;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:name-swish .65s cubic-bezier(.55,.05,.22,1) 1.72s forwards}
+@keyframes name-outline{to{stroke-dashoffset:0}}
+@keyframes name-fill{to{fill:currentColor;stroke-opacity:.28}}
+@keyframes name-swish{to{stroke-dashoffset:0}}
+.drawn-name-main{color:#f7f4eb}.drawn-name-sub{color:#e8ad43}
+@media(max-width:600px){.drawn-name{width:128px;height:38px}.drawn-name-main{font-size:16px}.drawn-name-sub{font-size:6.5px}}
+@media(prefers-reduced-motion:reduce){.drawn-name text{animation:none;stroke-dashoffset:0;fill:currentColor}.drawn-name path{animation:none;stroke-dashoffset:0}}
+
+/* Hand-drawn homepage lion */
+.hero-sketch{position:absolute;z-index:3;left:-2%;top:50%;width:102%;height:auto;transform:translateY(-50%);overflow:visible;pointer-events:none;animation:hero-sketch-fade .65s ease 2.05s forwards}
+.hero-sketch path{fill:none;stroke:#e8ad43;stroke-width:.62;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:180;stroke-dashoffset:180;filter:drop-shadow(0 0 2px rgba(232,173,67,.3));animation:hero-line-draw 1.45s cubic-bezier(.55,.05,.22,1) .18s forwards}
+.hero-sketch path:nth-child(2){animation-delay:.42s}.hero-sketch path:nth-child(3){animation-delay:.62s}.hero-sketch path:nth-child(4){animation-delay:.78s}.hero-sketch path:nth-child(5){animation-delay:.94s}
+.hero-lion{animation:hero-lion-ink 1.45s cubic-bezier(.16,1,.3,1) 1.02s both}
+@keyframes hero-line-draw{to{stroke-dashoffset:0}}
+@keyframes hero-sketch-fade{to{opacity:0;visibility:hidden}}
+@keyframes hero-lion-ink{0%{opacity:0;clip-path:inset(0 100% 0 0);filter:grayscale(1) contrast(1.25) blur(2px);transform:translate(-6%,-50%) scale(.985)}55%{opacity:.66;filter:grayscale(.45) contrast(1.12) blur(0)}100%{opacity:.88;clip-path:inset(0 55% 0 0);filter:saturate(.88) contrast(1.03);transform:translate(-4%,-50%) scale(1)}}
+@media(max-width:900px){.hero-sketch{left:0;width:58%}}
+@media(max-width:600px){.hero-sketch{width:74%;left:-3%}}
+@media(prefers-reduced-motion:reduce){.hero-sketch{display:none}.hero-lion{animation:none;opacity:.88;clip-path:inset(0 55% 0 0)}}
