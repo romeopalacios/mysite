@@ -95,7 +95,7 @@ footer{background:var(--ink);color:var(--cream);border-top:1px solid #f4f5f01f}f
 @media(max-width:600px){.brand-drawn{width:146px;height:44px}.site-header.is-scrolled{height:60px}.hero-copy:before{display:none}}
 @media(prefers-reduced-motion:reduce){.wordmark text{animation:none;fill:currentColor;stroke-dashoffset:0}.wordmark-sub{fill:var(--acid)}.wordmark-swish{animation:none;stroke-dashoffset:0}.hero h1{animation:none;background-position:0}}
 
-/* Lion Grid identity artwork */
+/* Lion Web identity artwork */
 .brand-drawn{width:220px;height:58px;display:flex;align-items:center;gap:10px;overflow:visible}
 .photo-mark,.footer-mark{position:relative;display:block;flex:0 0 auto;width:47px;height:47px;border-radius:50%;overflow:hidden;clip-path:circle(0 at 50% 50%);animation:lion-reveal 1.05s cubic-bezier(.2,.75,.2,1) .08s forwards;filter:drop-shadow(0 0 0 rgba(0,174,239,0))}
 .photo-mark:after{content:"";position:absolute;inset:0;border:1px solid rgba(237,174,56,.75);border-radius:50%;box-shadow:inset 0 0 12px rgba(0,174,239,.18)}
@@ -192,3 +192,110 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 @media(max-width:900px){.hero-sketch{left:0;width:58%}}
 @media(max-width:600px){.hero-sketch{width:74%;left:-3%}}
 @media(prefers-reduced-motion:reduce){.hero-sketch{display:none}.hero-lion{animation:none;opacity:.88;clip-path:inset(0 55% 0 0)}}
+
+/* Mobile layout — keep the desktop character without squeezing it onto a phone */
+@media (max-width: 600px) {
+  html { scroll-padding-top: 60px; }
+  body { min-width: 0; }
+
+  .site-header,
+  .site-header.is-scrolled {
+    height: 64px;
+    padding: 0 16px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+  .brand-drawn { width: 158px; height: 46px; gap: 7px; }
+  .photo-mark { width: 36px; height: 36px; }
+  .drawn-name { width: 112px; height: 35px; }
+  .drawn-name-main { font-size: 15px; letter-spacing: 1.65px; }
+  .drawn-name-sub { font-size: 6px; letter-spacing: 4.7px; }
+  .header-cta {
+    min-height: 40px;
+    padding: 9px 12px;
+    border-width: 1px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
+  .hero { padding-top: 64px; }
+  .hero-copy {
+    min-height: auto;
+    padding: 62px 18px 46px;
+    gap: 44px;
+  }
+  .eyebrow { font-size: 9px; }
+  .hero h1 {
+    margin: 0;
+    font-size: clamp(58px, 19.8vw, 92px);
+    line-height: .84;
+    letter-spacing: -.07em;
+  }
+  .hero-bottom { gap: 16px; align-items: center; }
+  .hero-bottom > p { max-width: 220px; font-size: 14px; line-height: 1.45; }
+  .round-link { flex: 0 0 68px; width: 68px; height: 68px; font-size: 9px; }
+  .round-link b { font-size: 19px; }
+  .hero-shape { min-height: 275px; }
+  .hero-lion {
+    left: 50%;
+    width: 610px;
+    opacity: .88;
+    clip-path: inset(0 55% 0 0);
+    transform: translate(-30%, -50%);
+    animation: none;
+  }
+  .hero-sketch { display: none; }
+  .hero-shape .shape-copy {
+    left: 18px;
+    right: auto;
+    bottom: 20px;
+    padding: 8px 10px;
+    font-size: 27px;
+  }
+
+  .section-pad { padding: 72px 18px; }
+  .intro { min-height: 0; gap: 30px; }
+  .intro-copy h2,
+  .services h2,
+  .process h2 { font-size: clamp(45px, 14.5vw, 58px); line-height: .9; }
+  .intro-copy p { margin-top: 30px; padding-left: 0; font-size: 16px; line-height: 1.55; }
+
+  .services-heading { gap: 28px; padding-bottom: 48px; }
+  .service-card {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    padding: 27px 18px;
+  }
+  .service-card h3 { font-size: 29px; line-height: 1; }
+  .service-card p { margin-top: 12px; font-size: 13px; line-height: 1.55; }
+  .card-arrow { display: none; }
+
+  .manifesto { min-height: 0; }
+  .manifesto-small { margin-bottom: 42px; }
+  .manifesto-big { font-size: clamp(46px, 15vw, 62px); line-height: .9; letter-spacing: -.06em; }
+
+  .process { gap: 0; }
+  .process-title { margin-bottom: 42px; }
+  .process-title .label { margin-bottom: 28px; }
+  .step { grid-template-columns: 34px minmax(0, 1fr); padding: 28px 0; }
+  .step h3 { font-size: 31px; }
+  .step p { margin-top: 12px; font-size: 13px; line-height: 1.55; }
+
+  .contact-lead h2 { margin: 38px 0 30px; font-size: clamp(47px, 15vw, 62px); line-height: .84; }
+  .project-form { padding: 68px 18px; }
+  .project-form label { margin-bottom: 24px; }
+  .project-form input,
+  .project-form select,
+  .project-form textarea { font-size: 16px; }
+
+  footer { padding: 34px 18px; gap: 16px; }
+}
+
+@media (max-width: 380px) {
+  .brand-drawn { width: 140px; }
+  .photo-mark { width: 33px; height: 33px; }
+  .drawn-name { width: 100px; }
+  .header-cta { padding-inline: 10px; font-size: 9px; }
+  .hero h1 { font-size: 19vw; }
+  .hero-bottom > p { max-width: 190px; }
+}
