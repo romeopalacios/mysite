@@ -327,7 +327,7 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 }
 
 /* Selected work carousel */
-.work { position: relative; overflow: hidden; background: #e8ad43; color: #050c12; }
+.work { position: relative; overflow: hidden; background: #e8ad43; color: #050c12; touch-action: pan-y; }
 .work-heading { display: grid; grid-template-columns: 22% 1fr auto; align-items: end; padding-bottom: clamp(54px, 7vw, 92px); }
 .work-heading h2 { margin: 0; font-size: clamp(58px, 8vw, 125px); line-height: .84; letter-spacing: -.075em; }
 .work-heading h2 em { color: #f6f1e7; font-family: "Instrument Serif", serif; font-weight: 400; }
@@ -369,16 +369,18 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 @media (max-width: 600px) {
   .work-heading { display: block; padding: 72px 18px 48px; }
   .work-heading h2 { margin-top: 26px; font-size: clamp(48px, 15vw, 62px); }
-  .work-controls { margin-top: 34px; padding: 0; }
+  .work-controls { justify-content: space-between; margin-top: 34px; padding: 0; }
+  .work-arrow { width: 44px; height: 44px; }
   .work-stage, .work-slide { min-height: 0; }
-  .work-visual { min-height: 82vw; }
+  .work-visual { min-height: 82vw; max-height: 390px; }
   .work-visual:before { inset: 14px; }
   .work-visual img { width: 76%; height: 76%; }
   .work-visual--joy img { width: 100%; height: 100%; }
-  .work-copy { min-height: 410px; padding: 46px 18px; }
-  .work-copy h3 { margin: 52px 0 24px; font-size: 56px; }
+  .work-copy { min-height: 390px; padding: 42px 18px; }
+  .work-copy h3 { margin: 46px 0 22px; font-size: clamp(48px, 15vw, 58px); }
   .work-copy > p:not(.work-type) { margin-bottom: 34px; }
   .work-dots { display: flex; justify-content: center; gap: 8px; padding: 20px; background: #050c12; }
-  .work-dots button { width: 28px; height: 3px; padding: 0; border: 0; background: #40505a; cursor: pointer; }
-  .work-dots button.is-active { background: #e8ad43; }
+  .work-dots button { position: relative; width: 44px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer; }
+  .work-dots button:after { content: ""; position: absolute; inset: 10px 5px; background: #40505a; }
+  .work-dots button.is-active:after { background: #e8ad43; }
 }
