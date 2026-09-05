@@ -22,3 +22,41 @@ if (heroShape && window.matchMedia('(pointer: fine)').matches) {
     heroShape.style.setProperty('--my', '50%');
   });
 }
+
+const work = document.querySelector('.work');
+if (work) {
+  const slides = [...work.querySelectorAll('.work-slide')];
+  const dots = [...work.querySelectorAll('.work-dots button')];
+  const counter = work.querySelector('.work-current');
+  let activeProject = 0;
+
+  const showProject = (index) => {
+    activeProject = (index + slides.length) % slides.length;
+    slides.forEach((slide, slideIndex) => {
+      const isActive = slideIndex === activeProject;
+      slide.classList.toggle('is-active', isActive);
+      slide.setAttribute('aria-hidden', String(!isActive));
+    });
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeProject;
+      dot.classList.toggle('is-active', isActive);
+      dot.setAttribute('aria-pressed', String(isActive));
+    });
+    counter.textContent = String(activeProject + 1).padStart(2, '0');
+  };
+
+  work.querySelector('.work-prev').addEventListener('click', () => showProject(activeProject - 1));
+  work.querySelector('.work-next').addEventListener('click', () => showProject(activeProject + 1));
+  dots.forEach((dot, index) => dot.addEventListener('click', () => showProject(index)));
+  work.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowLeft') showProject(activeProject - 1);
+    if (event.key === 'ArrowRight') showProject(activeProject + 1);
+  });
+
+  let touchStart = 0;
+  work.addEventListener('touchstart', (event) => { touchStart = event.changedTouches[0].clientX; }, { passive: true });
+  work.addEventListener('touchend', (event) => {
+    const distance = event.changedTouches[0].clientX - touchStart;
+    if (Math.abs(distance) > 55) showProject(activeProject + (distance < 0 ? 1 : -1));
+  }, { passive: true });
+}
