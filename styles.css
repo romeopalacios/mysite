@@ -393,6 +393,7 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 
 /* Modern action arrows */
 .action-icon { display: block; flex: 0 0 auto; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+.eyebrow span:only-child { margin-left: auto; }
 .work-copy a .action-icon { color: #00aeea; }
 .work-copy a:hover .action-icon,
 .project-form button:hover .action-icon { transform: translate(3px, -3px); }
