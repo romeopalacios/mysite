@@ -302,19 +302,26 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 
 /* A quiet visual wink for the contact invitation */
 .contact-lion {
+  position: relative;
   width: clamp(170px, 19vw, 270px);
   aspect-ratio: 3 / 2;
   margin: -18px 0 18px;
   overflow: hidden;
   opacity: .82;
   mix-blend-mode: screen;
-  background: url("lion-flashlight-mean.png") center / contain no-repeat;
-  -webkit-mask: url("lion-flashlight.png") center / contain no-repeat;
-  mask: url("lion-flashlight.png") center / contain no-repeat;
   animation: contact-lion-in 1s cubic-bezier(.16, 1, .3, 1) both;
   animation-timeline: view();
   animation-range: entry 5% cover 32%;
 }
+.contact-lion:before,
+.contact-lion:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("lion-flashlight.png") center / contain no-repeat;
+}
+.contact-lion:before { clip-path: polygon(42% 58%, 55% 58%, 59% 63%, 58% 72%, 44% 74%, 41% 69%); }
+.contact-lion:after { clip-path: polygon(56% 61%, 96% 39%, 96% 89%, 56% 71%); }
 @keyframes contact-lion-in {
   from { opacity: 0; transform: translateX(-12px); filter: brightness(.7); }
   to { opacity: .82; transform: none; filter: brightness(1); }
@@ -345,7 +352,7 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 .work-slide:hover .work-visual img { transform: scale(1.025); }
 .work-visual--legacy { background: radial-gradient(circle at 48% 45%, #e4a32f, #864c16 72%); }
 .work-visual--joy { background: #6d2030; }
-.work-visual--joy img { width: 54%; height: 78%; object-fit: cover; object-position: center 31%; filter: saturate(.78) contrast(1.06) drop-shadow(0 28px 45px rgba(0,0,0,.34)); }
+.work-visual--joy img { object-position: center 31%; filter: saturate(.78) contrast(1.06) drop-shadow(0 28px 45px rgba(0,0,0,.34)); }
 .work-visual--don { background: radial-gradient(circle at center, #213748, #09131b 72%); }
 .work-visual--don img { width: 84%; height: 84%; }
 .work-index { position: absolute; z-index: 3; top: 8%; left: 8%; color: rgba(255,255,255,.9); font: italic 400 18px/1 "Instrument Serif", serif; }
@@ -375,7 +382,6 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .work-visual { min-height: 82vw; max-height: 390px; }
   .work-visual:before { inset: 14px; }
   .work-visual img { width: 76%; height: 76%; }
-  .work-visual--joy img { width: 58%; height: 84%; }
   .work-copy { min-height: 390px; padding: 42px 18px; }
   .work-copy h3 { margin: 46px 0 22px; font-size: clamp(48px, 15vw, 58px); }
   .work-copy > p:not(.work-type) { margin-bottom: 34px; }
