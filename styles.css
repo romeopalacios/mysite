@@ -414,3 +414,29 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 @media (max-width: 380px) {
   .hero h1 { font-size: 10.8vw; }
 }
+
+/* Mobile hero order: headline, lion, supporting action */
+@media (max-width: 600px) {
+  .hero { grid-template-rows: auto auto auto; }
+  .hero-copy { display: contents; }
+  .eyebrow { display: none; }
+  .hero h1 {
+    order: 1;
+    width: 100%;
+    margin: 0;
+    padding: 22px 12px 14px;
+    text-align: center;
+  }
+  .hero-shape {
+    order: 2;
+    min-height: 220px;
+    margin: 0;
+  }
+  .hero-lion { top: 48%; }
+  .hero-bottom {
+    order: 3;
+    width: 100%;
+    margin: 0;
+    padding: 20px 18px 28px;
+  }
+}
