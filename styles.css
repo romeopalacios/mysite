@@ -520,10 +520,19 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .brand-drawn { width: 184px; height: 50px; }
   .drawn-name { width: 180px; height: 47px; }
   .hero-shape { overflow: visible; }
-  .hero-lion { top: 65%; }
+  .hero-lion { top: 32%; }
 }
 
 @media (max-width: 380px) {
   .brand-drawn { width: 158px; }
   .drawn-name { width: 154px; }
+}
+
+/* Give the DESIGNS line more presence in the header wordmark */
+.drawn-name-sub { font-size: 9.5px; letter-spacing: 5px; stroke-width: .5px; }
+@media (max-width: 600px) {
+  .drawn-name-sub { font-size: 9px; letter-spacing: 4.8px; }
+}
+@media (max-width: 380px) {
+  .drawn-name-sub { font-size: 8.5px; letter-spacing: 4.4px; }
 }
