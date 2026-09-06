@@ -427,8 +427,7 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
     background: linear-gradient(180deg, #050c12 0%, #081722 34%, #081722 100%);
   }
   .hero-lion { top: 29%; width: 590px; }
-  .round-link span { display: none; }
-  .round-link { justify-content: center; gap: 0; }
+  .round-link { display: none; }
 }
 
 /* Mobile hero order: headline, lion, supporting action */
