@@ -510,3 +510,20 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .hero-shape { min-height: 230px; margin-top: -42px; padding-top: 0; }
   .hero-lion { top: 20%; width: 610px; }
 }
+
+/* Wordmark-only header and uncropped mobile lion */
+.photo-mark { display: none !important; }
+.brand-drawn { width: 224px; height: 58px; gap: 0; }
+.drawn-name { width: 214px; height: 54px; }
+
+@media (max-width: 600px) {
+  .brand-drawn { width: 184px; height: 50px; }
+  .drawn-name { width: 180px; height: 47px; }
+  .hero-shape { overflow: visible; }
+  .hero-lion { top: 65%; }
+}
+
+@media (max-width: 380px) {
+  .brand-drawn { width: 158px; }
+  .drawn-name { width: 154px; }
+}
