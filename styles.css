@@ -574,13 +574,13 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 @media (max-width: 600px) {
   .hero { min-height: auto; }
   .hero-shape {
-    min-height: 190px;
+    min-height: 220px;
     margin-top: 0;
   }
-  .hero-lion { top: 52%; }
-  .hero-shape .shape-copy { bottom: 0; }
+  .hero-lion { top: 68%; }
+  .hero-shape .shape-copy { bottom: 18px; }
   .ticker { display: none; }
-  .services-heading { padding-top: 0; }
+  .services-heading { padding-top: 24px; }
   .work-heading { padding-top: 46px; }
   .work-type { margin-bottom: 0; }
   .work-copy h3 { margin-top: 14px; }
