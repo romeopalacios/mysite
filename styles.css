@@ -398,6 +398,12 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 .work-copy a:hover .action-icon,
 .project-form button:hover .action-icon { transform: translate(3px, -3px); }
 
+/* Preserve the services heading alignment without the eyebrow label. */
+.services-heading h2 { grid-column: 2; }
+@media (max-width: 900px) {
+  .services-heading h2 { grid-column: 1; }
+}
+
 /* Compact mobile hero and portfolio rhythm */
 @media (max-width: 600px) {
   .hero-copy { padding: 34px 18px 28px; gap: 22px; }
