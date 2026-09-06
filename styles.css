@@ -415,6 +415,19 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .hero h1 { font-size: 10.8vw; }
 }
 
+@media (max-width: 600px) {
+  .photo-mark { width: 44px; height: 44px; }
+  .brand-drawn { width: 172px; height: 52px; gap: 8px; }
+  .drawn-name { width: 120px; }
+  .hero h1 { padding-bottom: 0; }
+  .hero-shape {
+    min-height: 226px;
+    margin-top: -10px;
+    background: linear-gradient(180deg, #050c12 0%, #081722 34%, #081722 100%);
+  }
+  .hero-lion { top: 41%; width: 590px; }
+}
+
 /* Mobile hero order: headline, lion, supporting action */
 @media (max-width: 600px) {
   .hero { grid-template-rows: auto auto auto; }
