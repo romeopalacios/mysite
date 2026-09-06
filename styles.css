@@ -572,6 +572,7 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 
 /* Final compact mobile hero spacing */
 @media (max-width: 600px) {
+  .hero { min-height: auto; }
   .hero-shape {
     min-height: 190px;
     margin-top: -58px;
