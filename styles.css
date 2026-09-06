@@ -397,3 +397,20 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 .work-copy a .action-icon { color: #00aeea; }
 .work-copy a:hover .action-icon,
 .project-form button:hover .action-icon { transform: translate(3px, -3px); }
+
+/* Compact mobile hero and portfolio rhythm */
+@media (max-width: 600px) {
+  .hero-copy { padding: 34px 18px 28px; gap: 22px; }
+  .hero h1 { white-space: nowrap; font-size: clamp(36px, 11.2vw, 52px); line-height: .9; letter-spacing: -.065em; }
+  .hero h1 br { display: none; }
+  .hero-bottom { margin-top: 2px; }
+  .hero-shape { min-height: 238px; margin-top: -10px; }
+  .hero-lion { top: 43%; width: 560px; transform: translate(-30%, -50%); }
+  .hero-shape .shape-copy { bottom: 14px; }
+  .work-copy { min-height: 320px; padding: 26px 18px 34px; }
+  .work-copy h3 { margin: 24px 0 30px; }
+}
+
+@media (max-width: 380px) {
+  .hero h1 { font-size: 10.8vw; }
+}
