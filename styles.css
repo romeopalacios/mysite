@@ -535,3 +535,32 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
 @media (max-width: 380px) {
   .drawn-name-sub { font-size: 8.5px; letter-spacing: 4.4px; }
 }
+
+/* Editorial mobile hero headline */
+@media (max-width: 600px) {
+  .hero h1 {
+    position: relative;
+    width: max-content;
+    max-width: calc(100% - 24px);
+    margin-inline: auto;
+    padding-inline: 4px;
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(38px, 11.7vw, 54px);
+    letter-spacing: -.025em;
+    word-spacing: .08em;
+    background-image: linear-gradient(115deg, #fff 12%, #e8ad43 58%, #fff 88%);
+  }
+  .hero h1:after {
+    content: "";
+    position: absolute;
+    right: 3%;
+    bottom: -8px;
+    width: 31%;
+    height: 2px;
+    background: linear-gradient(90deg, #e8ad43, #00aeea);
+    transform: skewX(-28deg);
+    transform-origin: right center;
+  }
+}
