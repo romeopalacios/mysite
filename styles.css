@@ -456,3 +456,20 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
     padding: 20px 18px 28px;
   }
 }
+
+/* Final mobile hero placement */
+@media (max-width: 600px) {
+  .hero h1 {
+    padding: 18px 12px 0;
+    word-spacing: .12em;
+  }
+  .hero h1 br { display: inline; content: " "; }
+  .hero h1 br:after { content: " "; }
+  .hero-shape {
+    min-height: 250px;
+    margin-top: -6px;
+    padding-top: 0;
+    background: linear-gradient(180deg, #050c12 0%, #081722 30%, #081722 100%);
+  }
+  .hero-lion { top: 88%; width: 590px; }
+}
