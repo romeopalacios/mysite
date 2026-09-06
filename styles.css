@@ -503,3 +503,10 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .drawn-name { width: 105px; }
   .header-cta { padding-inline: 8px; font-size: 8px; }
 }
+
+/* Corrected mobile headline and lion position */
+@media (max-width: 600px) {
+  .hero h1 { white-space: nowrap; padding-bottom: 0; word-spacing: .12em; }
+  .hero-shape { min-height: 230px; margin-top: -42px; padding-top: 0; }
+  .hero-lion { top: 20%; width: 610px; }
+}
