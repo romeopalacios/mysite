@@ -577,9 +577,9 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
     margin-top: -58px;
   }
   .hero-lion { top: 26%; }
-  .hero-shape .shape-copy { bottom: 8px; }
+  .hero-shape .shape-copy { bottom: 0; }
   .ticker { display: none; }
-  .services-heading { padding-top: 16px; }
+  .services-heading { padding-top: 0; }
   .work-heading { padding-top: 46px; }
   .work-type { margin-bottom: 0; }
   .work-copy h3 { margin-top: 14px; }
