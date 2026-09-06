@@ -575,9 +575,9 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   .hero { min-height: auto; }
   .hero-shape {
     min-height: 190px;
-    margin-top: -58px;
+    margin-top: 0;
   }
-  .hero-lion { top: 26%; }
+  .hero-lion { top: 52%; }
   .hero-shape .shape-copy { bottom: 0; }
   .ticker { display: none; }
   .services-heading { padding-top: 0; }
