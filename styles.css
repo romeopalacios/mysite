@@ -564,3 +564,8 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
     transform-origin: right center;
   }
 }
+
+/* Remove the mobile hero footer so Services begins sooner */
+@media (max-width: 600px) {
+  .hero-bottom { display: none; }
+}
