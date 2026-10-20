@@ -60,3 +60,48 @@ if (work) {
     if (Math.abs(distance) > 55) showProject(activeProject + (distance < 0 ? 1 : -1));
   }, { passive: true });
 }
+
+const projectForm = document.querySelector('.project-form');
+const thankYouDialog = document.querySelector('.thank-you-dialog');
+
+if (projectForm && thankYouDialog) {
+  const submitButton = projectForm.querySelector('button[type="submit"]');
+  const formNote = projectForm.querySelector('.form-note');
+  const defaultNote = formNote.textContent;
+  const closeDialog = () => thankYouDialog.close();
+
+  thankYouDialog.querySelector('.dialog-close').addEventListener('click', closeDialog);
+  thankYouDialog.querySelector('.dialog-done').addEventListener('click', closeDialog);
+  thankYouDialog.addEventListener('click', (event) => {
+    if (event.target === thankYouDialog) closeDialog();
+  });
+
+  projectForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!projectForm.reportValidity()) return;
+
+    submitButton.disabled = true;
+    submitButton.firstChild.textContent = 'Sending… ';
+    formNote.textContent = defaultNote;
+    formNote.classList.remove('is-error');
+
+    try {
+      const endpoint = projectForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(projectForm),
+        headers: { Accept: 'application/json' }
+      });
+      if (!response.ok) throw new Error('Submission failed');
+
+      projectForm.reset();
+      thankYouDialog.showModal();
+    } catch (error) {
+      formNote.textContent = 'Something went wrong. Please try again.';
+      formNote.classList.add('is-error');
+    } finally {
+      submitButton.disabled = false;
+      submitButton.firstChild.textContent = 'Send it our way ';
+    }
+  });
+}

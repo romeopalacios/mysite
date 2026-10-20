@@ -291,6 +291,20 @@ footer{background:#050c12;border-top-color:rgba(232,173,67,.18)}
   footer { padding: 34px 18px; gap: 16px; }
 }
 
+/* In-page form confirmation */
+.form-note.is-error { color: #ff8b72; }
+.project-form button:disabled { cursor: wait; opacity: .65; transform: none; }
+.thank-you-dialog { width: min(520px, calc(100% - 36px)); padding: 62px 48px 44px; border: 1px solid rgba(232,173,67,.7); background: #071722; color: #f6f1e7; text-align: center; box-shadow: 0 28px 90px rgba(0,0,0,.48); }
+.thank-you-dialog::backdrop { background: rgba(2,8,12,.78); backdrop-filter: blur(5px); }
+.thank-you-dialog .dialog-mark { display: block; margin-bottom: 18px; color: #e8ad43; font-size: 34px; }
+.thank-you-dialog .label { color: #00aeea; }
+.thank-you-dialog h2 { margin: 12px 0 8px; font: italic 400 clamp(52px,9vw,76px)/1 "Instrument Serif",serif; }
+.thank-you-dialog > p:not(.label) { margin: 0 0 30px; color: #c5d0d5; }
+.dialog-close { position: absolute; top: 14px; right: 18px; border: 0; background: transparent; color: #f6f1e7; font: 300 30px/1 inherit; cursor: pointer; }
+.dialog-done { min-width: 145px; padding: 14px 24px; border: 0; background: #e8ad43; color: #051018; font: 700 11px "DM Sans",sans-serif; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; }
+.dialog-done:hover { background: #00aeea; }
+@media (max-width: 600px) { .thank-you-dialog { padding: 54px 24px 36px; } }
+
 @media (max-width: 380px) {
   .brand-drawn { width: 140px; }
   .photo-mark { width: 33px; height: 33px; }
